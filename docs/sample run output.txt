@@ -1,0 +1,112 @@
+Not connected
+Enter ESX's IP address or hostname: 192.168.88.70
+
+Specify Credential
+Please specify server credential
+User: root
+Password for user root: ************
+
+
+Name                           Port  User
+----                           ----  ----
+192.168.88.70                  443   root
+Already Created Switches:
+none
+
+Switches to be created:
+Prevent
+Monitor A
+Monitor B
+
+Creating Switch:  Prevent
+
+
+Name    PortGroupName NIC    Mode
+----    ------------- ---    ----
+Prevent Prevent       vmnic1 Sniffing
+
+Created sniffing
+
+Creating Switch:  Monitor A
+
+Name      PortGroupName NIC    Mode
+----      ------------- ---    ----
+Monitor A Monitor A     vmnic2 Sniffing
+
+Created sniffing
+
+Creating Switch:  Monitor B
+
+Name      PortGroupName NIC    Mode
+----      ------------- ---    ----
+Monitor B Monitor B     vmnic3 Sniffing
+
+Created sniffing
+
+Already Created PortGroups:
+none
+
+PortGroups to be created:
+Prevent
+Monitor A
+Monitor B
+
+Creating PortGroup:  Prevent
+
+Name    PortGroupName NIC    Mode
+----    ------------- ---    ----
+Prevent Prevent       vmnic1 Sniffing
+
+Created
+
+Creating PortGroup:  Monitor A
+
+Name      PortGroupName NIC    Mode
+----      ------------- ---    ----
+Monitor A Monitor A     vmnic2 Sniffing
+
+Created
+
+Creating PortGroup:  Monitor B
+
+Name      PortGroupName NIC    Mode
+----      ------------- ---    ----
+Monitor B Monitor B     vmnic3 Sniffing
+
+Created
+
+Already Created VMs:
+FN CommandPost
+FE UI
+
+VMs to be created:
+FN Collector
+FN Direct
+FE SVC
+FD Decoys
+
+Creating VM:  FN Collector
+                                                                                                                                                     Name         NumCpu MemoryGB                                                                                                                         ----         ------ --------                                                                                                                         FN Collector      8       32
+Setting EFI boot
+
+Creating VM:  FN Direct
+                                                                                                                                                     Name      NumCpu MemoryGB                                                                                                                            ----      ------ --------                                                                                                                            FN Direct      8       24
+Setting EFI boot
+
+Creating VM:  FE SVC
+                                                                                                                                                     Name   NumCpu MemoryGB                                                                                                                               ----   ------ --------                                                                                                                               FE SVC     10       48
+Creating VM:  FD Decoys
+                                                                                                                                                     Name      NumCpu MemoryGB                                                                                                                            ----      ------ --------                                                                                                                            FD Decoys      8       16
+
+Reading content of vmstore:/ha-datacenter/HDD datastore/_ISO
+
+ISOs already in datastore:
+DecoyServer-9.2.4.iso
+fidelisrelease-vm-9.2.4.x86_64.iso
+Windows Server 2012r2.ISO
+
+ISOs to be uploaded:
+CentOS-7-x86_64-Minimal-1804.iso
+
+Uploading CentOS-7-x86_64-Minimal-1804.iso
+                                                                                                                                                     Mounting ISO images to new VM(s)                                                                                                                     fidelisrelease-vm-9.2.4.x86_64.iso to FN Collector                                                                                                   fidelisrelease-vm-9.2.4.x86_64.iso to FN Direct                                                                                                      CentOS-7-x86_64-Minimal-1804.iso to FE SVC                                                                                                           DecoyServer-9.2.4.iso to FD Decoys                                                                                                                                                                                                                                                                        Starting new VM(s)                                                                                                                                   FN Collector                                                                                                                                         FN Direct                                                                                                                                            FE SVC                                                                                                                                               FD Decoys                                                                                                                                                                                                                                                                                                 Finished

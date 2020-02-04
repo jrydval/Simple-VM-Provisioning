@@ -1,0 +1,7 @@
+Name,CPU,Memory,Disk,Provisioning,OS,ISO,Boot,Networks
+FN CommandPost,8,28,300,Thin,centos6_64Guest,fidelisrelease-vm-9.2.4.x86_64.iso,EFI,VM Network
+FN Collector,8,32,300,Thick,centos6_64Guest,fidelisrelease-vm-9.2.4.x86_64.iso,EFI,VM Network
+FN Direct,8,24,50,Thin,centos6_64Guest,fidelisrelease-vm-9.2.4.x86_64.iso,EFI, Prevent|Monitor A|Monitor B|VM Network
+FE UI,4,16,100,Thin,windows8Server64Guest,Windows Server 2012r2.ISO,BIOS,VM Network
+FE SVC,10,48,300,Thick,centos7_64Guest,CentOS-7-x86_64-Minimal-1804.iso,BIOS,VM Network
+FD Decoys,8,16,250,Thin,centos7_64Guest,DecoyServer-9.2.4.iso,BIOS,VM Network|VM Network

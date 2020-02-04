@@ -1,0 +1,4 @@
+Name, PortGroupName, NIC, Mode
+Prevent, Prevent, vmnic1, Sniffing
+Monitor A, Monitor A, vmnic2, Sniffing
+Monitor B, Monitor B, vmnic3, Sniffing
