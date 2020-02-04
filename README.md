@@ -10,7 +10,7 @@
  - Install PowerCLI by running `Install-Module VMware.PowerCLI` from PowerShell
  - Modify the config files
  - Modify the config section of the script if needed
- - Start
+ - Start the script
 
  ## Sample output
  Sample run is in the file `docs/sample run output.txt`
