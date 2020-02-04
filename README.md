@@ -10,6 +10,7 @@
  - Install PowerCLI by running `Install-Module VMware.PowerCLI` from PowerShell
  - Modify the config files
  - Modify the config section of the script if needed
+ - Prepare needed ISO files in the defined directory to be uploaded by the script to ESX datastore
  - Start the script
 
  ## Sample output
