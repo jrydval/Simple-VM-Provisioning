@@ -1,5 +1,5 @@
 # Simple-VM-Provisioning
- Simple VMware ESX provisioning using PowerShell and PowerCLI creating VMs, vSwitches, PortGroups, uploading ISO files and mounting them and starting the new VMs.
+ Simple VMware ESX provisioning script using PowerShell and PowerCLI creating VMs, vSwitches, PortGroups, uploading ISO files and mounting them and starting the new VMs.
 
  ## Configuration
  Config files are `VM List.csv` and `Switch.csv`. The format is more-less self describing.
