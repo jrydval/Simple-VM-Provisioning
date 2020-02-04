@@ -3,7 +3,7 @@
 
  ## Configuration
  Config files are `VM List.csv` and `Switch List.csv`. The format is more-less self describing.
- Some folders and names - like datastore name and folder names are defined in the script in Configuration section-
+ Some folders and names - like datastore name and folder names - are defined in the script in Configuration section-
 
  ## Usage
  - Install PowerShelll (tested with PowerShell v7rc2 on MacOS)
