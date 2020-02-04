@@ -86,17 +86,17 @@ FE SVC
 FD Decoys
 
 Creating VM:  FN Collector
-                                                                                                                                                     Name         NumCpu MemoryGB                                                                                                                         ----         ------ --------                                                                                                                         FN Collector      8       32
+
 Setting EFI boot
 
 Creating VM:  FN Direct
-                                                                                                                                                     Name      NumCpu MemoryGB                                                                                                                            ----      ------ --------                                                                                                                            FN Direct      8       24
+
 Setting EFI boot
 
 Creating VM:  FE SVC
-                                                                                                                                                     Name   NumCpu MemoryGB                                                                                                                               ----   ------ --------                                                                                                                               FE SVC     10       48
+
 Creating VM:  FD Decoys
-                                                                                                                                                     Name      NumCpu MemoryGB                                                                                                                            ----      ------ --------                                                                                                                            FD Decoys      8       16
+
 
 Reading content of vmstore:/ha-datacenter/HDD datastore/_ISO
 
@@ -109,4 +109,17 @@ ISOs to be uploaded:
 CentOS-7-x86_64-Minimal-1804.iso
 
 Uploading CentOS-7-x86_64-Minimal-1804.iso
-                                                                                                                                                     Mounting ISO images to new VM(s)                                                                                                                     fidelisrelease-vm-9.2.4.x86_64.iso to FN Collector                                                                                                   fidelisrelease-vm-9.2.4.x86_64.iso to FN Direct                                                                                                      CentOS-7-x86_64-Minimal-1804.iso to FE SVC                                                                                                           DecoyServer-9.2.4.iso to FD Decoys                                                                                                                                                                                                                                                                        Starting new VM(s)                                                                                                                                   FN Collector                                                                                                                                         FN Direct                                                                                                                                            FE SVC                                                                                                                                               FD Decoys                                                                                                                                                                                                                                                                                                 Finished
+
+Mounting ISO images to new VM(s)
+fidelisrelease-vm-9.2.4.x86_64.iso to FN Collector
+fidelisrelease-vm-9.2.4.x86_64.iso to FN Direct
+CentOS-7-x86_64-Minimal-1804.iso to FE SVC
+DecoyServer-9.2.4.iso to FD Decoys
+
+Starting new VM(s)
+FN Collector
+FN Direct
+FE SVC
+FD Decoys
+
+Finished
