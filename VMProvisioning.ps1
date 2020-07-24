@@ -24,10 +24,11 @@ if (-Not $global:DefaultVIServer) {
 #################################################################
 
 # Datastore name or comment-out for auto-configuration - 1st DS will be used
-$datastore = Get-Datastore -Name "datastore1" 
+$datastoreVM = Get-Datastore -Name "datastore1" 
+$datastoreISO = Get-Datastore -Name "datastore1" 
 
 # Local folder with needed ISO files or comment-out for ./files/
-#$isoSourcePath = "/Volumes/Pulec/Latest/" 
+$isoSourcePath = "/Volumes/Pulec/Latest/" 
 
 # Datastore folder name with ISO files or comment-out for /ISO/
 $isoFolderName = "_ISO" 
@@ -39,7 +40,9 @@ $isoFolderName = "_ISO"
 
 if (-Not $isoSourcePath ) { $isoSourcePath = "./files/" } 
 if (-Not $isoFolderName) { $isoFolderName = "ISO" }
-if (-Not $datastore) { $datastore = (Get-Datastore)[0] }
+if (-Not $datastoreVM) { $datastoreVM = (Get-Datastore)[0] }
+if (-Not $datastoreISO) { $datastoreISO = (Get-Datastore)[0] }
+
 
 #################################################################
 # CREATE VIRTUAL SWITCHES                                       #
@@ -140,7 +143,7 @@ $missingVMs | ForEach-Object {
         DiskStorageFormat = $param.Provisioning
         MemoryGB          = $param.Memory
         CD                = $true
-        Datastore         = $datastore
+        Datastore         = $datastoreVM
         GuestId           = $param.OS
     }
 
@@ -164,7 +167,7 @@ Write-Host ""
 # UPLOAD ISO IMAGES                                             #
 #################################################################
 
-$datastoreIsoPath = "vmstore:/$($datastore.Datacenter)/$($datastore.Name)/$isoFolderName"
+$datastoreIsoPath = "vmstore:/$($datastoreISO.Datacenter)/$($datastoreISO.Name)/$isoFolderName"
 
 Write-Host "Reading content of ${datastoreIsoPath} `n" -ForegroundColor Blue
 
@@ -178,17 +181,17 @@ $neededISOs = $neededVMs.ISO | Select-Object -Unique
 
 Write-Host "ISOs already in datastore:" -ForegroundColor Yellow
 $existingISOs = $ISOs.Name | Where-Object { $neededISOs -contains $_ }
-if ($existingISOs) { $existingISOs } else { "none" }
+if ($existingISOs) { Write-Host $existingISOs } else { Write-Host "none" }
 Write-Host ""
 
 Write-Host "ISOs to be uploaded:" -ForegroundColor Green
 $missingISOs = $neededISOs | Where-Object { $ISOs.Name -notcontains $_ }
 $ISOsToUpload = $missingISOs | Select-Object -Unique
-if ($ISOsToUpload) { $ISOsToUpload } else { "none" } 
+if ($ISOsToUpload) { Write-Host $ISOsToUpload } else { Write-Host "none" } 
 Write-Host ""
 
 $ISOsToUpload | ForEach-Object -Process {
-    "Uploading $_"
+    Write-Host "Uploading $_"
     Copy-DatastoreItem "$isoSourcePath/$_" -Destination $datastoreIsoPath
 } -End {
     Write-Host ""
