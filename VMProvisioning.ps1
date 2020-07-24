@@ -7,6 +7,8 @@
 #################################################################
 
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false | Out-Null
+Set-PowerCLIConfiguration -Scope Session -InvalidCertificateAction Ignore -Confirm:$false | Out-Null
+
 $ErrorActionPreference = 'Stop'
 
 #################################################################
